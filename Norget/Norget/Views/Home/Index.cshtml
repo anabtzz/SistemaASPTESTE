@@ -1,0 +1,168 @@
+﻿@model IEnumerable<Norget.Models.Livro>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!--link o css para o html-->
+    <link rel="stylesheet" href="~/css/estilo.css" asp-append-version="true"/>
+    <!--coloca o icon da dev reads no site-->
+    <link rel="shortcut icon" href="~/img/logo.ico" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap lib para pegar icones necessarios para a montagem do site-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <!--fonte do google montserrat para os textos-->
+    <title>DEVREADS</title>
+       
+</head>
+
+<body>
+    
+    <main>
+
+        <a asp-controller="Usuario" asp-action="Atendimento" class="help"><p>?</p></a>
+        <section class="populares">
+            <h2 class="titulo">POPULARES</h2>
+            <div class="cards">
+                <!-- Altere aqui para "cards" -->
+                @foreach (var livro in Model)
+                {
+                    <div class="card">
+                        <br><br><img src="img/@livro.ImgLiv">
+                        <h2>@livro.NomeLiv</h2>
+                        <p>R$@livro.PrecoLiv</p>
+                        <a asp-controller="Livro" asp-action="DetalheLivro" asp-route-IdLiv="@livro.IdLiv"class="btnp">Ver</a>
+                       <!-- <button class="btnp">VER</button> -->
+                    </div>                   
+                }                
+            </div>
+        </section>
+
+        <div class="gradiente1"></div>
+
+        <h2 class="titulo">PROMOÇÕES</h2>
+
+        <div class="promocoes-container">
+            <div class="cardestaque">
+                <div class="destaque">
+            @foreach (var livro in Model){
+                        
+                    <h2 class="semana">Livro da Semana</h2>
+                    <img src="img/img11.jpeg">
+                    <p>Código Limpo</p>
+                    <span>R$ 78,90</span>
+                    <button class="btnd">VER</button>
+                    }
+                </div>
+
+                <div class="promocoes-container">
+                    <section class="promocoes">
+                        <div class="ofertas">
+                            <h2>Ofertas da Semana</h2>
+                        </div>
+
+                        <div class="cardestaque">
+                            <div class="cardP">
+                                <br><br><img src="img/img5.jpeg">
+                                <h2>Tecnologias da Informação na Gestão</h2>
+                                <p>R$ 90,00</p>
+                                <button class="btnd">VER</button>
+                            </div>
+
+                            <div class="cardP">
+                                <br><br><img src="img/img6.jpeg">
+                                <h2>Por Trás da TI</h2>
+                                <p>R$ 60,00</p>
+                                <button class="btnd">VER</button>
+                            </div>
+
+                            <div class="cardP">
+                                <br><br><img src="img/img7.jpeg">
+                                <h2>The Pragmatic Programming</h2>
+                                <p>R$ 142,20</p>
+                                <button class="btnd">VER</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="gradiente2">
+            <section class="categorias">
+                <h2 class="titulo">CATEGORIAS</h2>
+                <div class="grid-categorias">
+
+                    <div class="categoria">
+                        <p>FUNDAMENTOS DE TI</p>
+                    </div>
+
+                    <div class="categoria">
+                        <p>DESENVOLVIMENTO DE SOFTWARE</p>
+                    </div>
+
+                    <div class="categoria">
+                        <p>BANCO DE DADOS</p>
+                    </div>
+
+                    <div class="categoria">
+                        <p>SEGURANÇA DA INFORMAÇÃO</p>
+                    </div>
+
+                    <div class="categoria">
+                        <p>IA E MACHINE LEARNING</p>
+                    </div>
+
+                    <div class="categoria">
+                        <p>REDES E INFRAESTRUTURA</p>
+                    </div>
+
+                    <div class="categoria">
+                        <p>HARDWARE</p>
+                    </div>
+                    <div class="categoria">
+                        <p>TECNOLOGIA E SOCIEDADE</p>
+                    </div>
+                    <div class="categoria">
+                        <p>IDENTIDADE VISUAL</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="gradiente3">
+            <!--Arrumar gradiente-->
+
+            <div class="carousel">
+                <div class="carouselL">
+                    <div class="crul">
+                        <br><br><img src="img/img8.jpeg">
+                        <h2>Head First Html</h2>
+                        <p>R$ 123,00</p>
+                        <button class="btnc">VER</button>
+                    </div>
+                    <div class="crul">
+                        <br><br><img src="img/img9.jpeg">
+                        <h2>Engenharia de Software</h2>
+                        <p>R$ 192,38</p>
+                        <button class="btnc">VER</button>
+                    </div>
+                    <div class="crul">
+                        <br><br><img src="img/img10.jpeg">
+                        <h2>Manual de DevOps</h2>
+                        <p>R$ 78,99</p>
+                        <button class="btnc">VER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

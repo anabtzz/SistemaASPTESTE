@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Norget.Models.Livro>
+
+@{
+    ViewData["Title"] = "PainelLivro";
+}
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!--link o css para o html-->
+    <link rel="stylesheet" href="~/css/painelusuario.css" asp-append-version="true" />
+    <!--coloca o icon da dev reads no site-->
+    <link rel="shortcut icon" href="~/img/logo.ico" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap lib para pegar icones necessarios para a montagem do site-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Painel Livro</title>
+
+</head>
+<body>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeLiv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecoLiv)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+
+
+			</tr>
+		
+    </thead>
+    
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+				<tr>
+					
+					<th>
+						
+                    @Html.DisplayFor(modelItem => item.NomeLiv)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.PrecoLiv)
+                </th>
+               
+                <th>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </th>
+               
+            
+                <td class="alterar">
+                    @Html.ActionLink("Alterar", "Alterar", new { id = item.ISBN}) 
+                   
+                </td>
+                    <td class="excluir">
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.ISBN },
+                    new { onclick = "return confirm('Deseja realmente Excluir este item?');" })
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿
+@model Norget.Models.Livro
+@{
+    ViewData["Title"] = "DetalheLivro";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title> 
+    <link rel="stylesheet" href="~/css/detalheslivro.css" asp-append-version="true" />
+    <link rel="shortcut icon" type="imagex/png" href="img/logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>DEVREADS</title>
+
+    </head>
+<body>
+   
+    <div class="voltar">
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-chevron-left"></i>VOLTAR</a>
+    </div>
+
+    <main class="product-details">
+        <div class="product-image">
+           
+            <img src="/img/@Model.ImgLiv" alt="Imagem do Produto">
+            
+        </div>
+        <div class="product-info">
+        
+            
+                <h1>@Model.NomeLiv</h1>
+            
+           
+            <p class="price"><span>R$ @Model.PrecoLiv à vista</span> <br> ou em 1x de R$ 00,00</p>
+
+            <div class="actions">
+                <button class="comprar">Comprar Agora</button>
+                <form asp-controller="Carrinho" asp-action="AddCarrinho" method="post">
+                    <input type="hidden" name="IdLiv" value="@Model.IdLiv" />
+                    <button class="addcarrinho">Adicionar ao Carrinho</button>
+                </form>
+            </div>
+
+
+            <div class="share">
+                <span>Compartilhar:  </span>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-telegram"></i>
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-envelope"></i>
+            </div>
+        </div>
+    </main>
+
+    <section class="product-info-details">
+        <hr>
+        <h2>Ficha Técnica</h2>
+        <br/>
+        <div class="tech-info">
+            
+                <div><i class="bi bi-person"></i> Editora: <span>@Model.NomeEdi</span></div>
+                <div><i class="bi bi-barcode"></i>ISBN: <span>@Model.ISBN</span></div>
+                <div><i class="bi bi-book"></i> Páginas: <span>150</span></div>
+                <div><i class="bi bi-globe"></i> Idioma: <span>Inglês</span></div>
+            
+        </div>
+        <hr>
+        
+        <h2>Descrição</h2>
+        <br/>
+        <p>@Model.DescLiv</p>
+    </section>
+
+</body>
+</html>

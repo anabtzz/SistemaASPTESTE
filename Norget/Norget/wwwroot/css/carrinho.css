@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #212121;
+    color: #ffffff;
+    line-height: 1.6; 
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+  
+  button {
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+  }
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+td > img {
+    width: 100px;
+    height: 150px;
+    border-radius:15px;
+}
+  
+  table thead tr {
+    border-bottom: 3px solid #eee;
+  }
+  
+  table thead tr th {
+    text-align: left;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    color: #fff;
+
+  }
+  
+  table tbody tr {
+    border-bottom: 3px solid #eee;
+
+    
+  }
+  
+  table tbody tr:last-child {
+    border: 0;
+    
+  }
+  
+  table tbody tr td {
+    padding: 40px 10px;
+
+    
+  }
+  .container{
+      margin-top:-50px;
+  }
+
+.line {
+    border: white 2px solid;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  h6{
+      color: red;
+      font-size:10px;
+  }
+
+h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:30px;
+}
+
+.voltar {
+    font-family: "Montserrat", sans-serif;
+    padding: 80px 80px;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+}
+
+    .voltar i {
+        color: #ffffff;
+    }
+
+    .voltar a {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+.titulo {
+    font-size:26px;
+    text-align: center;
+}
+  
+.remover {
+    border: 0;
+    padding: 15px 0;
+    color: white;
+    background-color:transparent;
+    border:#3bc55b 2px solid;
+    border-radius: 20px;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    padding:10px;
+  }
+.finalizar {
+    background-color: #3bc55b;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration:none;
+    height:20px;
+    width:200px;
+}
+
+
+@media (max-width: 590px) {
+    
+    td {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    
+}

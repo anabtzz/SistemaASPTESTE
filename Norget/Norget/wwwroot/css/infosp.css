@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"Montserrat", sans-serif;
+    max-width:100%
+}
+
+body {
+    font-family:"Montserrat", sans-serif;
+    background-color: #212121;
+    color: white;
+    line-height: 1.6;
+}
+
+.voltar{
+    font-family:"Montserrat", sans-serif;
+    padding: 80px 80px;
+    font-size: 28px;
+    color:  white;
+    text-decoration: none;
+}
+
+.voltar i{
+    color: #ffffff;
+}
+
+.voltar a{
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.profile-pic i{
+    font-size: 90px; /* Ajuste o tamanho do ícone aqui */
+    color: #ffffff;
+}
+
+.profile-info h2 {
+    font-size: 1.8rem; /* Tamanho da fonte do nome */
+    margin-bottom: 38px;
+    text-align: center;/* Centraliza o texto */
+    color: #fff; 
+}
+
+
+
+.account-section h2{
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.quebra{
+    width: 850px;
+    justify-content: center;
+    display: center;
+}
+
+ /* Cards Section */
+.cards-section {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1200px;
+    
+}
+
+/* Alinhamento da frase "Cartões" à esquerda */
+.cards-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+    .cards-header h3 {
+        font-size: 1.5rem;
+        color: white; /* Cor do texto */
+        text-align: left;
+    }
+
+/* Contêiner para os cartões, que ficam lado a lado */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Permite que os cartões quebrem linha */
+}
+
+/* Estilização dos cartões */
+.card {
+    font-size: 1.0rem;
+    color: white;
+    background-color:transparent;
+    border: 2px solid #3FB950;
+    border-radius: 20px;
+    padding: 20px;
+    width: 320px;
+    text-align: left;
+    position: relative;
+    margin-right: 50px; /* Define o espaçamento entre os cartões */
+}
+.card p{
+    margin-bottom: 8px;
+}
+    /* Remove o margin do último cartão para não ter espaço extra à direita */
+    .card:last-child {
+        margin-right: 0;
+    }
+.card-type {
+    color: #3FB950;
+    font-weight: bold;
+}
+
+.editar {
+    position: absolute;
+    right: 23px;
+    bottom: 26px;
+    color: #ffffff96;
+    cursor: pointer;
+}
+
